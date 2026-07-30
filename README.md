@@ -8,9 +8,9 @@ check-ins.
 
 Belyse Intwaza, African Leadership University.
 
-- **Live demo:** _add your deployed URL here before submitting_
-- **SRS document:** _add a link to the SRS PDF/Doc here before submitting_
-- **Demo video:** _add your recording link here before submitting_
+- **Live demo:** https://heza-frontend.onrender.com/reports
+- **SRS document:** https://docs.google.com/document/d/1aOyb3cp9SRSXMPkVkBRRMNS5J3Hw-SoJX7rukrNvt1U/edit?tab=t.0
+- **Demo video:** https://youtu.be/MnJ5oxLWH_k
 
 ## Structure
 
