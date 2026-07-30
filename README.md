@@ -87,37 +87,4 @@ Also shown on the login screen itself.
 - Log in as `admin.mugisha` instead to see the **Reports** page (nurses
   don't get this one in the nav).
 
-## Troubleshooting
 
-- **`docker compose up -d db` won't start / port in use** - something else
-  is already on 5433. Stop it, or change the port in
-  `backend/docker-compose.yml` and `backend/.env`.
-- **`npm install` complains about "Unsupported engine"** - Node's too old,
-  see Prerequisites.
-- **CORS errors in the browser console** - `CORS_ORIGINS` in `backend/.env`
-  needs to list whatever origin the frontend is actually running on.
-- **"Could not reach the server" on login** - backend isn't running, or
-  `VITE_API_URL` in `frontend/.env` points somewhere wrong.
-
-## Deploying
-
-Both halves need an actual public URL, not just `localhost`. Any host that
-gives you Node + Python + Postgres works fine (Render, Railway, Fly.io, a
-VPS...). Things that'll trip you up if you skip them:
-
-- Point the backend's `DATABASE_URL` at whatever Postgres the host gives you,
-  then run `alembic upgrade head` + `python -m scripts.seed` against it once.
-- Set a real `JWT_SECRET_KEY` - the default is a placeholder.
-- Update `CORS_ORIGINS` to the frontend's actual deployed URL. Forgetting
-  this is the #1 way the deployed app looks "broken" when it's really just
-  CORS.
-- Frontend: `npm install && npm run build`, then `npm run start`. Set
-  `VITE_API_URL` to the deployed backend's URL **before** running `build` -
-  it's baked in at build time, not read at runtime, so changing it after
-  means rebuilding.
-
-## Requirements reference
-
-Implements FR1-FR6 and the non-functional requirements from the project SRS
-(linked at the top). `backend/README.md` and `frontend/README.md` go into
-what's implemented vs. simplified for a student pilot build, and why.

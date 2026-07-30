@@ -42,7 +42,7 @@ python3 -m venv .venv
 
 cp .env.example .env
 
-docker compose up -d db          # Postgres on localhost:5433
+docker compose up -d db          
 ./.venv/bin/alembic upgrade head
 ./.venv/bin/python -m scripts.seed
 

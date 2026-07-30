@@ -10,7 +10,7 @@ TanStack Start, React 19, TypeScript, Tailwind v4, shadcn/ui.
 
 ```sh
 npm install
-cp .env.example .env   # set VITE_API_URL to your backend URL
+cp .env.example .env   
 npm run dev
 ```
 
@@ -21,7 +21,7 @@ Backend needs to be running (see `../backend/README.md`) and reachable at
 
 ```sh
 npm run build
-npm run start   # runs node .output/server/index.mjs
+npm run start  
 ```
 
 `VITE_API_URL` gets baked into the build at build time - set it before
